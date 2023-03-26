@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-    /* ___CSS Reset___________________________________________________________________________________________________ */
+    /* ___CSS Reset_________________ */
 
     /* 1. Use a more-intuitive box-sizing model. */
     *, *::before, *::after {
@@ -42,10 +42,11 @@ const GlobalStyles = createGlobalStyle`
         isolation: isolate;
     }
 
-    /* ___Global Styles________________________________________________________________________________________________ */
+    /* ___Global Styles_______________ */
 
     body {
         font-family: 'Lato', sans-serif;
+        overflow-x: hidden;
     }
     
 `;

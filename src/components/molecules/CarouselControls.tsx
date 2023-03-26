@@ -1,40 +1,41 @@
 // ___Components_________________________________________________________________________________________________________
-import ButtonWrapper from "../atoms/wrappers/ButtonWrapper/ButtonWrapper";
-import ButtonWithIcon from "./ButtonWithIcon";
+import FlexWrapper from "../atoms/wrappers/FlexWrapper";
+import Button from "../atoms/Button";
+import Icon from "../atoms/Icon";
 
 // ___Types______________________________________________________________________________________________________________
 interface CarouselControlsProps {
-    array: any;
-    sliceStart: number;
-    setSliceStart: (value: React.SetStateAction<number>) => void;
-    sliceEnd: number;
-    setSliceEnd: (value: React.SetStateAction<number>) => void;
+    cardData: any;
+    cardCounter: number;
+    setCardCounter: (value: React.SetStateAction<number>) => void;
 }
+
+
 // ___Component__________________________________________________________________________________________________________
-const CarouselControls = ({ array, sliceStart, setSliceStart, sliceEnd, setSliceEnd }: CarouselControlsProps) => {
+const CarouselControls = ({ 
+    cardData, 
+    cardCounter, 
+    setCardCounter 
+}: CarouselControlsProps) => {
     return ( 
-        <ButtonWrapper gap='16px'>
-            <ButtonWithIcon 
-                mode='button'
-                icon='arrow-left' 
-                action={ () => {
-                    if (sliceStart > 0) {
-                        setSliceStart((precCount) => precCount - 1);
-                        setSliceEnd((precCount) => precCount - 1);
-                    }
+        <FlexWrapper type='button' gap='16px'>
+            <Button 
+                view='icon' 
+                handleClick={ () => {
+                    if (cardCounter > 0) { setCardCounter(prevState => prevState - 1) }
+                }}
+            >
+                <Icon type='arrow-left' />
+            </Button>
+            <Button 
+                view='icon' 
+                handleClick={ () => { 
+                    if ( cardData && cardCounter < cardData.length - 3) { setCardCounter(prevState => prevState + 1) }
                 }} 
-            />
-            <ButtonWithIcon 
-                mode='button'
-                icon='arrow-right' 
-                action={ () => { 
-                    if (array && sliceEnd < array.length) {
-                        array.length && setSliceStart((precCount) => precCount + 1);
-                        array.length && setSliceEnd((precCount) => precCount + 1);
-                    }
-                }} 
-            />
-        </ButtonWrapper>
+            >
+                <Icon type='arrow-right' />
+            </Button>
+        </FlexWrapper>
     );
 }
 

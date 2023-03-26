@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 // ___Styled Component__________________________________________________________________________________________________
-const AnchorTag = styled.a`
+const AnchorTag = styled(motion.a)`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: fit-content;
     text-decoration: none;
     color: #FFFFFF;
     font-weight: 300;

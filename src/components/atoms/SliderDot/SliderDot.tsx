@@ -1,22 +1,25 @@
 // ___Styled Components__________________________________________________________________________________________________
-import StyledButton from "./SliderDot.styles";
+import { CircleButtonWrapper, InnerCircle } from './SliderDot.styles';
 
 // ___Types______________________________________________________________________________________________________________
-interface SliderDotProps {
-    isActive?: boolean | undefined;
-    handleClick: () => void;
+export interface SliderDotProps {
+    color: 'black' | 'white';
+    active?: boolean;
+    handleClick?: () => void;
 }
 
 // ___Component__________________________________________________________________________________________________________
-const SliderDot = ({ isActive, handleClick }: SliderDotProps) => {
-    return ( 
-        <StyledButton 
+const SliderDot = ({ active, color, handleClick }: SliderDotProps) => {
+    return (
+        <CircleButtonWrapper 
+            active={ active } 
+            color={ color } 
             onClick={ handleClick }
-            isActive={ isActive }
         >
-        </StyledButton>
+            {active && <InnerCircle color={ color } />}
+        </CircleButtonWrapper>
     );
-}
+};
 
 export default SliderDot;
 

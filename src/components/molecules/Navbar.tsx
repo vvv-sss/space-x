@@ -1,17 +1,17 @@
 // ___Components__________________________________________________________________________________________________________
 import NavbarLink from "../atoms/NavbarLink/NavbarLink";
-import NavbarLinksWrapper from "../atoms/wrappers/NavbarWrapper/NavbarWrapper";
+import FlexWrapper from "../atoms/wrappers/FlexWrapper";
 
 // ___Component___________________________________________________________________________________________________________
 const Navbar = () => {
     return ( 
         <nav>
-            <NavbarLinksWrapper>
+            <FlexWrapper alignItems='center' flexWrap='wrap' gap='32px'>
                 <NavbarLink title='Home' path='home' />
                 <NavbarLink title='Tours' path='tours' />
                 <NavbarLink title='About' path='about' />
                 <NavbarLink title='Help' path='help' />
-            </NavbarLinksWrapper>
+            </FlexWrapper>
         </nav>
     );
 }

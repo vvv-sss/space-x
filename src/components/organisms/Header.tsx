@@ -2,17 +2,15 @@
 import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 // ___Components_________________________________________________________________________________________________________
-import HeaderWrapper from "../atoms/wrappers/HeaderWrapper/HeaderWrapper";
+import FlexWrapper from "../atoms/wrappers/FlexWrapper";
 import LogoLink from "../molecules/LogoLink";
 import Navbar from "../molecules/Navbar";
-import ButtonWrapper from "../atoms/wrappers/ButtonWrapper/ButtonWrapper";
-import ButtonWithText from "../molecules/ButtonWithText";
-import ButtonWithIcon from "../molecules/ButtonWithIcon";
-
+import Button from "../atoms/Button";
+import Icon from "../atoms/Icon";
+import StyledNavLink from "../atoms/StyledNavLink";
 
 // ___Component__________________________________________________________________________________________________________
 const Header = () => {
-
     // Redirection to the Home Page on initial loading
     const navigate = useNavigate();
     const { pathname } = useLocation();
@@ -22,22 +20,29 @@ const Header = () => {
     }, [pathname]);
 
     return ( 
-        <>
-            <HeaderWrapper>
+        <>  
+            <FlexWrapper 
+                type='header'
+                initial={{ y: '-100vh' }}
+                animate={{ y: 0, transition: {duration: 0.5, delay: 0.5} }}
+            >
                 <LogoLink />
                 <Navbar />
-                <ButtonWrapper width='228px' gap='12px'>
-                    <ButtonWithIcon 
-                        mode='link'
-                        path='favorites'
-                        icon='add-to-favorite'
-                    />
-                    <ButtonWithText 
-                        mode='button'
-                        title='Sign In' 
-                    />
-                </ButtonWrapper>
-            </HeaderWrapper>
+                <FlexWrapper 
+                    type='button' 
+                    width='228px' 
+                    gap='12px'
+                >
+                    <StyledNavLink to='favorites' case='favorites'>
+                        <Button view='icon'>
+                            <Icon type='add-to-favorites' />
+                        </Button>
+                    </StyledNavLink>
+                    <Button view='text'>
+                        Sign In
+                    </Button>
+                </FlexWrapper>
+            </FlexWrapper>
             <main>
                 <Outlet />
             </main>

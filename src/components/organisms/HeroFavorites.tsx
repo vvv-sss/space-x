@@ -1,24 +1,30 @@
 // ___Components_________________________________________________________________________________________________________
-import HeroWrapper from '../atoms/wrappers/HeroWrapper/HeroWrapper';
-import HeroBanner from '../atoms/HeroBanner';
+import FlexWrapper from '../atoms/wrappers/FlexWrapper';
+import AbsoluteCenteredWrapper from '../atoms/wrappers/AbsoluteCenteredWrapper';
+import Image from '../atoms/Image';
 // ___Assets_____________________________________________________________________________________________________________
 import Banner from '../../assets/images/image_3.png';
-import HeaderOne from '../atoms/typography/HeaderOne/HeaderOne';
-
+import HeaderOne from '../atoms/typography/HeaderOne';
 
 // ___Component__________________________________________________________________________________________________________
 const HeroFavorites = () => {
     return ( 
-        <HeroWrapper height='440px'>
+        <FlexWrapper 
+            type='hero'
+            height='440px' 
+        >
+            <AbsoluteCenteredWrapper zIndex={ 1 }>
                 <HeaderOne>
                     Favorites
                 </HeaderOne>
-                <HeroBanner 
-                    src={ Banner }
-                    alt='An astronaut in open space'
-                    height='auto'
-                />
-        </HeroWrapper>
+            </AbsoluteCenteredWrapper>
+            <Image 
+                type='banner'
+                src={ Banner }
+                alt='An astronaut in open space'
+                height='auto'
+            />
+        </FlexWrapper>
     );
 }
 
