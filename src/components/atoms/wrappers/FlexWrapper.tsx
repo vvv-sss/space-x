@@ -36,7 +36,7 @@ const FlexWrapper = styled(motion.div)<WrapperProps & FlexWrapperProps>`
                 background: rgba(30, 30, 30, 0.478);
                 z-index: 2;
 
-            @media (min-width: 950px) {
+            @media (min-width: 960px) {
                 flex-direction: row;
                 box-sizing: border-box;
                 height: 80px;

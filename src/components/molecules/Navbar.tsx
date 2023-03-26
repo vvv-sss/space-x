@@ -6,7 +6,7 @@ import FlexWrapper from "../atoms/wrappers/FlexWrapper";
 const Navbar = () => {
     return ( 
         <nav>
-            <FlexWrapper alignItems='center' flexWrap='wrap' gap='32px'>
+            <FlexWrapper alignItems='center' gap='32px'>
                 <NavbarLink title='Home' path='home' />
                 <NavbarLink title='Tours' path='tours' />
                 <NavbarLink title='About' path='about' />
