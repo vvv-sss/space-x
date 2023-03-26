@@ -23,7 +23,7 @@ const NavSliderDots = ( {
     setImage3
 }: NavSliderDotsProps) => {
     return ( 
-        <AbsoluteCenteredWrapper left='46%'>
+        <AbsoluteCenteredWrapper case='hero-slider-dots'>
             <FlexWrapper 
                 justifyContent='center' 
                 alignItems='center' 

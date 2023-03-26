@@ -9,8 +9,12 @@ export interface WrapperProps {
     zIndex?: number;
 }
 
+export interface BoxWrapperProps {
+    type?: 'home-slider';
+}
+
 export interface FlexWrapperProps {
-    type?: 'header' | 'hero' | 'button' | 'card';
+    type?: 'header' | 'hero' | 'slider-header' | 'button' | 'card';
     flex?: string;
     flexDirection?: 'row' | 'column';
     justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';

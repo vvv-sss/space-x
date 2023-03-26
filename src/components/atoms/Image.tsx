@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // ___Types______________________________________________________________________________________________________________
 interface ImageProps {
-    type?: 'banner' | 'logo';
+    type?: 'banner' | 'banner-favorite' | 'logo';
     src?: string;
     alt?: string;
     width?: string;
@@ -37,6 +37,23 @@ const Image = styled(motion.img).attrs<ImageProps>((props) => ({
             object-fit: cover;
             opacity: 0.48;
             z-index: 0;
+        `}
+
+    ${ props =>
+        props.type === 'banner-favorite' &&
+            css<ImageProps>`
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: ${ props => props.height ?? 'auto' };
+            object-fit: cover;
+            opacity: 0.48;
+            z-index: 0;
+
+            @media (max-width: 900px) {
+                height: 100%;
+            }
         `}
 
     ${ props =>

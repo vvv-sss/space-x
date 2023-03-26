@@ -31,10 +31,18 @@ const Span = styled.span<TypographyTypes & SpanTypes>`
             css<TypographyTypes & SpanTypes>`
             display: block;
             position: relative;
-            top: -15px;
             text-align: center;
-            font-size: ${ props => props.fontSize ?? '310px' };
+            font-size: 2em;
             line-height: 1;
+
+            @media screen and (min-width: 1100px) {
+                top: -10px;
+                font-size: 200px;
+            }
+
+            @media screen and (min-width: 1300px) {
+                font-size: 310px;
+            }
         `}
 
     ${props =>

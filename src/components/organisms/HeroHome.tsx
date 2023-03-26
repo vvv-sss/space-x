@@ -31,7 +31,7 @@ const HeroHome = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: {duration: 2} }}
             >
-                <HeaderOne margin='auto 0'>
+                <HeaderOne case='hero'>
                     The space is waiting for
                     <Span type='hero-header'>
                         you

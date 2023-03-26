@@ -33,10 +33,10 @@ const FlexWrapper = styled(motion.div)<WrapperProps & FlexWrapperProps>`
                 gap: 16px;
                 width: 100%;
                 padding: 16px 0px;
-                background: rgba(30, 30, 30, 0.48);
+                background: rgba(30, 30, 30, 0.478);
                 z-index: 2;
 
-            @media (min-width: 900px) {
+            @media (min-width: 950px) {
                 flex-direction: row;
                 box-sizing: border-box;
                 height: 80px;
@@ -54,6 +54,17 @@ const FlexWrapper = styled(motion.div)<WrapperProps & FlexWrapperProps>`
                 padding-top: 80px;
                 background: #1E1E1E;
                 overflow: hidden;
+        `}
+
+    ${props =>
+        props.type === 'slider-header' &&
+            css<WrapperProps & FlexWrapperProps>`
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+                max-width: 1273px;
+                margin: 0 auto 40px;
         `}
 
     ${props =>

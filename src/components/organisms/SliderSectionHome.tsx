@@ -50,14 +50,9 @@ const SliderSectionHome = () => {
     return (
         <BoxWrapper 
             id='home__slider-section' 
-            padding='80px'
+            type='home-slider'
         >
-            <FlexWrapper
-                justifyContent='space-between'
-                alignItems='center'
-                maxWidth='1273px'
-                margin='0 auto 40px'
-            >
+            <FlexWrapper type='slider-header'>
                 <HeaderTwo>Popular tours</HeaderTwo>
                 <CarouselControls 
                     cardData={ cardData }

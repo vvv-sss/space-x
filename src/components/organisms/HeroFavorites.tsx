@@ -19,10 +19,9 @@ const HeroFavorites = () => {
                 </HeaderOne>
             </AbsoluteCenteredWrapper>
             <Image 
-                type='banner'
+                type='banner-favorite'
                 src={ Banner }
                 alt='An astronaut in open space'
-                height='auto'
             />
         </FlexWrapper>
     );
