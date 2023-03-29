@@ -17,9 +17,18 @@ const PageNotFound = () => {
                 top='35%' 
                 zIndex={ 1 }
             >
-                <HeaderOne fontSize='30px'>
+                <HeaderOne 
+                    fontSize='30px' 
+                    margin='100px 0 0 0'
+                >
                     Sorry, page not found!
-                    <Span type='hero-header' fontSize='100px' >404</Span>
+                    <Span 
+                        display='block' 
+                        textAlign='right' 
+                        fontSize='100px' 
+                    >
+                        404
+                    </Span>
                 </HeaderOne>
             </AbsoluteCenteredWrapper>
             <Image 

@@ -4,10 +4,12 @@ import { TypographyTypes } from "./typography.types";
 // ___Types______________________________________________________________________________________________________________
 interface SpanTypes {
     type?: 'hero-header' | 'explore-tours';
+    display?: 'block' | 'inline-block';
 }
 
 // ___Styled Component___________________________________________________________________________________________________
 const Span = styled.span<TypographyTypes & SpanTypes>`
+    display: ${ props => props.display };
     padding: ${ props => props.padding };
     margin: ${ props => props.margin };
     text-align: ${ props => props.textAlign };

@@ -14,7 +14,7 @@ const HeroFavorites = () => {
             height='440px' 
         >
             <AbsoluteCenteredWrapper zIndex={ 1 }>
-                <HeaderOne>
+                <HeaderOne case='hero'>
                     Favorites
                 </HeaderOne>
             </AbsoluteCenteredWrapper>
